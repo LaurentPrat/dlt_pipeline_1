@@ -42,8 +42,7 @@ jobs:
 
       - name: Connect to Palo Alto VPN
         run: |
-          echo "${{ secrets.VPN_PASSWORD }}" | sudo openconnect --user="${{ secrets.VPN_USERNAME }}" --passwd-on-stdin vpn.corp.databricks.com
-
+          echo "${{ secrets.VPN_PASSWORD }}" | sudo openconnect --user="${{ secrets.VPN_USERNAME }}" --passwd-on-stdin 130.41.208.1
       # Deploy the bundle to the "dev" target as defined
       # in the bundle's settings file.
       - run: databricks bundle deploy
