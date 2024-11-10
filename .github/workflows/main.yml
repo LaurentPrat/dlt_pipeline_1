@@ -35,7 +35,16 @@ jobs:
       # See https://github.com/databricks/setup-cli
       - uses: databricks/setup-cli@main
 
-      # Deploy the bundle to the "qa" target as defined
+      - name: Install VPN Client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openconnect
+
+      - name: Connect to Palo Alto VPN
+        run: |
+          echo "${{ secrets.VPN_PASSWORD }}" | sudo openconnect --user="${{ secrets.VPN_USERNAME }}" --passwd-on-stdin vpn.corp.databricks.com
+
+      # Deploy the bundle to the "dev" target as defined
       # in the bundle's settings file.
       - run: databricks bundle deploy
         working-directory: .
