@@ -1,5 +1,6 @@
 # This workflow validates, deploys, and runs the specified bundle
-# within a pre-production target named "qa".
+# within a pre-production target named "dev".
+# -> databricks.yml
 name: "DEV deployment"
 
 # Ensure that only a single job or workflow using the same concurrency group
