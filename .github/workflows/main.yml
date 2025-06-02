@@ -41,9 +41,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y openconnect
 
-      - name: Connect to Palo Alto VPN
-        run: |
-          echo "${{ secrets.VPN_PASSWORD }}" | sudo openconnect --user="${{ secrets.VPN_USERNAME }}" --passwd-on-stdin 130.41.208.1 --servercert pin-sha256:ux/lCYz/0CNeKfpk5kv+ublYf1WPGiezm5iUSPuRTfo=
+      # - name: Connect to Palo Alto VPN
+      #   run: |
+      #     echo "${{ secrets.VPN_PASSWORD }}" | sudo openconnect --user="${{ secrets.VPN_USERNAME }}" --passwd-on-stdin 130.41.208.1 --servercert pin-sha256:ux/lCYz/0CNeKfpk5kv+ublYf1WPGiezm5iUSPuRTfo=
       # Deploy the bundle to the "dev" target as defined
       # in the bundle's settings file.
       - run: databricks bundle deploy
