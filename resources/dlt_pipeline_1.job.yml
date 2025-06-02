@@ -16,7 +16,7 @@ resources:
 
       tasks:
         - task_key: notebook_task
-          #job_cluster_key: job_cluster
+          job_cluster_key: jobserverless_cluster
           notebook_task:
             notebook_path: ../src/notebook.ipynb
         
@@ -29,7 +29,7 @@ resources:
         - task_key: main_task
           depends_on:
             - task_key: refresh_pipeline
-          #job_cluster_key: job_cluster
+          job_cluster_key: serverless_cluster
           python_wheel_task:
             package_name: dlt_pipeline_1
             entry_point: main
@@ -39,11 +39,14 @@ resources:
             # for more information on how to add other libraries.
             - whl: ../dist/*.whl
 
-      #job_clusters:
-      #  - job_cluster_key: job_cluster
-      #    new_cluster:
-      #      spark_version: 15.4.x-scala2.12
-      #      node_type_id: i3.xlarge
-      #      autoscale:
-      #          min_workers: 1
-      #          max_workers: 4
+      job_clusters:
+        - job_cluster_key: "serverless_cluster"
+          new_cluster:
+            spark_version: "13.3.x-scala2.12"
+            node_type_id: "i3.xlarge"
+            num_workers: 0  # Serverless
+            custom_tags:
+              team: "data-engineering"
+              environment: ${bundle.target}
+            spark_conf:
+              "spark.databricks.cluster.profile": "serverless"
