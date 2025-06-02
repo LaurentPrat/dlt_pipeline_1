@@ -1,0 +1,11 @@
+resources:
+  jobs:
+    New_Job_Jun_02_2025_12_15_PM:
+      name: LPT-ew Job Jun 02, 2025, 12:15 PM
+      tasks:
+        - task_key: T1
+          notebook_task:
+            notebook_path: /Workspace/Users/laurent.prat@databricks.com/LPT-SL1/explorations/sample_exploration
+            source: WORKSPACE
+      queue:
+        enabled: true
