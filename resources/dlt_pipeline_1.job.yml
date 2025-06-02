@@ -16,7 +16,7 @@ resources:
 
       tasks:
         - task_key: notebook_task
-          job_cluster_key: jobserverless_cluster
+          job_cluster_key: serverless_cluster
           notebook_task:
             notebook_path: ../src/notebook.ipynb
         
