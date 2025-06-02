@@ -48,5 +48,8 @@ resources:
             custom_tags:
               team: "data-engineering"
               environment: ${bundle.target}
+              ResourceClass: SingleNode
             spark_conf:
-              "spark.databricks.cluster.profile": "serverless"
+              spark.databricks.cluster.profile: singleNode
+              spark.master: local[*]
+  
