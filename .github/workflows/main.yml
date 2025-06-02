@@ -70,7 +70,7 @@ jobs:
 
       # Run the Databricks workflow named "my-job" as defined in the
       # bundle that was just deployed.
-      - run: databricks bundle run dlt_pipeline_1_job --refresh-all
+      - run: databricks bundle run dlt_pipeline_1_${bundle.environment} --refresh-all
         working-directory: .
         env:
           DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
