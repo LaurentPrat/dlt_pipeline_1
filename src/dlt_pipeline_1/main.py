@@ -13,7 +13,8 @@ def get_taxis(spark: SparkSession) -> DataFrame:
 def get_spark() -> SparkSession:
   try:
     from databricks.connect import DatabricksSession
-    return DatabricksSession.builder.getOrCreate()
+    return DatabricksSession.builder.remote(serverless=True).getOrCreate()
+    # return DatabricksSession.builder.getOrCreate()
   except ImportError:
     return SparkSession.builder.getOrCreate()
 
