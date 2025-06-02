@@ -1,13 +1,16 @@
 # The main pipeline for dlt_pipeline_1
-#resources:
-#  pipelines:
-#    dlt_pipeline_1_pipeline:
-#      name: dlt_pipeline_1_pipeline
-#      catalog: shared
-#      target: dlt_pipeline_1_${bundle.environment}
-#      libraries:
-#        - notebook:
-#            path: ../src/dlt_pipeline.ipynb
+resources:
+  pipelines:
+    dlt_pipeline_1_pipeline:
+      name: dlt_pipeline_1_pipeline
+      serverless: true
+      catalog: shared
+      target: dlt_pipeline_1_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
 
-#      configuration:
-#        bundle.sourcePath: ${workspace.file_path}/src
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src
+
+          
