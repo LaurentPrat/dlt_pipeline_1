@@ -4,7 +4,7 @@ resources:
     dlt_pipeline_1_pipeline:
       name: dlt_pipeline_1_pipeline
       serverless: true
-      catalog: samples
+      catalog: main
       target: dlt_pipeline_1_${bundle.environment}
       libraries:
         - notebook:
