@@ -1,7 +1,7 @@
 resources:
   jobs:
     New_Job_Jun_02_2025_12_15_PM:
-      name: LPT-JOB
+      name: LPTJOB
       tasks:
         - task_key: T1
           notebook_task:
