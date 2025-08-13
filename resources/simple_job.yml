@@ -5,7 +5,7 @@ resources:
       tasks:
         - task_key: T1
           notebook_task:
-            notebook_path: /Workspace/Users/laurent.prat@databricks.com/LPT-SL1/explorations/sample_exploration
+            notebook_path: /Workspace/Users/laurent.prat@databricks.com/LPT-SL1/explorations/sample_exploration.ipynb
             source: WORKSPACE
       queue:
         enabled: true
