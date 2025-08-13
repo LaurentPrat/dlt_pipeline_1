@@ -1,6 +1,6 @@
 resources:
   jobs:
-    New_Job_Jun_02_2025_12_15_PM:
+    LPTJOB:
       name: LPTJOB
       tasks:
         - task_key: T1
