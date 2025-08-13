@@ -70,7 +70,7 @@ jobs:
 
       # Run the Databricks workflow named "my-job" as defined in the
       # bundle that was just deployed.
-      - run: databricks bundle run LPT-JOB --refresh-all
+      - run: databricks bundle run [dev laurent_prat]LPT-JOB --refresh-all
         working-directory: .
         env:
           DATABRICKS_TOKEN: ${{ secrets.SP_TOKEN }}
